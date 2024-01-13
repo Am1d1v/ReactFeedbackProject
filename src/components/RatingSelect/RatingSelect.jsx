@@ -4,8 +4,9 @@ function RatingSelect() {
 
     const [selected, setSelected] = useState(10);
 
+    // Change selected rating
     const handleChange = (event) => {
-
+        setSelected(+event.target.value);
     }
 
   return (
@@ -25,7 +26,7 @@ function RatingSelect() {
              id='num2'
              name='rating'
              value='2'
-             checked = {selected === 1}
+             checked = {selected === 2}
              onChange={handleChange}
             />
             <label htmlFor="num2">2</label>
@@ -35,7 +36,7 @@ function RatingSelect() {
              id='num3'
              name='rating'
              value='3'
-             checked = {selected === 1}
+             checked = {selected === 3}
              onChange={handleChange}
             />
             <label htmlFor="num3">3</label>
@@ -45,7 +46,7 @@ function RatingSelect() {
              id='num4'
              name='rating'
              value='4'
-             checked = {selected === 1}
+             checked = {selected === 4}
              onChange={handleChange}
             />
             <label htmlFor="num4">4</label>
@@ -55,7 +56,7 @@ function RatingSelect() {
              id='num5'
              name='rating'
              value='5'
-             checked = {selected === 1}
+             checked = {selected === 5}
              onChange={handleChange}
             />
             <label htmlFor="num5">5</label>
@@ -65,7 +66,7 @@ function RatingSelect() {
              id='num6'
              name='rating'
              value='6'
-             checked = {selected === 1}
+             checked = {selected === 6}
              onChange={handleChange}
             />
             <label htmlFor="num6">6</label>
@@ -75,7 +76,7 @@ function RatingSelect() {
              id='num7'
              name='rating'
              value='7'
-             checked = {selected === 1}
+             checked = {selected === 7}
              onChange={handleChange}
             />
             <label htmlFor="num7">7</label>
@@ -85,7 +86,7 @@ function RatingSelect() {
              id='num8'
              name='rating'
              value='8'
-             checked = {selected === 1}
+             checked = {selected === 8}
              onChange={handleChange}
             />
             <label htmlFor="num8">8</label>
@@ -95,7 +96,7 @@ function RatingSelect() {
              id='num9'
              name='rating'
              value='9'
-             checked = {selected === 1}
+             checked = {selected === 9}
              onChange={handleChange}
             />
             <label htmlFor="num9">9</label>
@@ -105,7 +106,7 @@ function RatingSelect() {
              id='num10'
              name='rating'
              value='10'
-             checked = {selected === 1}
+             checked = {selected === 10}
              onChange={handleChange}
             />
             <label htmlFor="num10">10</label>
