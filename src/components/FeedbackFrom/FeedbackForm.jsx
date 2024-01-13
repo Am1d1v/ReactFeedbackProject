@@ -16,6 +16,7 @@ function FeedbackForm() {
     // Feedback warning message
     const [message, setMessage] = useState('');
 
+    // Set Rating
     const [rating, setRating] = useState('');
 
     const handleTextChange = (event) => {
@@ -35,7 +36,7 @@ function FeedbackForm() {
     <Card>
         <form>
             <h2>How would you rate this app ?</h2>
-            <RatingSelect></RatingSelect>
+            <RatingSelect selectRating={(rating) => setRating(rating)}></RatingSelect>
             <div className="input-group">
                 <input type="text" placeholder='Write a review' onChange={handleTextChange} value={text}/>
                 <Button type="submit" isDisabled={btnDisabled}>Send</Button>
