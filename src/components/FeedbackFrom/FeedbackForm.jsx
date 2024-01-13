@@ -32,9 +32,21 @@ function FeedbackForm() {
         }
     }
 
+    // Submit New Feedback
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const newFeedback = {
+            text: text,
+            rating: rating
+        }
+        console.log(newFeedback);
+        
+    };  
+
   return (
     <Card>
-        <form>
+        <form onSubmit={handleSubmit}>
             <h2>How would you rate this app ?</h2>
             <RatingSelect selectRating={(rating) => setRating(rating)}></RatingSelect>
             <div className="input-group">
