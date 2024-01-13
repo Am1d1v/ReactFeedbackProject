@@ -10,6 +10,11 @@ function App() {
   // Array of Feedback Data
   const [feedback, setFeedback] = useState(feedbackData);
 
+  // Add New Feedback
+  const addNewFeedback = (newFeedback) => {
+    console.log(newFeedback);
+  };
+
   // Delete Feedback
   const deleteFeedback = (id) => {
     if(window.confirm('Are you sure you want to delete feeedback?')){
@@ -24,7 +29,7 @@ function App() {
     <>
       <Header text="Feedback UI" />
       <div className="container">
-        <FeedbackForm />
+        <FeedbackForm handleAdd={addNewFeedback} />
         <FeedbackStats feedback={feedback}/>
         <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
       </div>

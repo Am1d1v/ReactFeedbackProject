@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 import RatingSelect from '../RatingSelect/RatingSelect';
 
 
-function FeedbackForm() {
+function FeedbackForm({handleAdd}) {
 
     // Review Text
     const [text, setText] = useState('');
@@ -40,8 +40,12 @@ function FeedbackForm() {
             text: text,
             rating: rating
         }
-        console.log(newFeedback);
         
+        // Add new Feedback
+        handleAdd(newFeedback);
+
+        // Clear Input Fields
+        setText('');
     };  
 
   return (
