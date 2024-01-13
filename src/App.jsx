@@ -12,7 +12,11 @@ function App() {
 
   // Add New Feedback
   const addNewFeedback = (newFeedback) => {
-    console.log(newFeedback);
+    // "Unique" id for feedbaack
+    newFeedback.id = Math.random();
+
+    // Array of feedbacks
+    setFeedback([newFeedback, ...feedback]);
   };
 
   // Delete Feedback
