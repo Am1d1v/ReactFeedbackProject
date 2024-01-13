@@ -1,4 +1,5 @@
 import FeedbackItem from "../FeedbakcItem/FeedbackItem";
+import { AnimatePresence, motion } from "framer-motion";
 
 function FeedbackList({feedback, handleDelete}) {
 
@@ -7,13 +8,32 @@ function FeedbackList({feedback, handleDelete}) {
         return <h3>No Feedback Yet</h3>
     }
 
+  // Default Return
+  // return (
+  //   <div className="feedback-list">
+  //       {feedback.map((item, index) => {
+  //         return  <FeedbackItem item={item} key={index} handleDelete={handleDelete}/>
+  //       })}
+  //   </div>
+  // )
+
+  // Animated Return
   return (
     <div className="feedback-list">
-        {feedback.map((item, index) => {
-          return  <FeedbackItem item={item} key={index} handleDelete={handleDelete}/>
-        })}
+      <AnimatePresence>
+        {feedback.map((item, index) => 
+          <motion.div 
+                key={item.id}
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                exit={{opacity: 0}}>
+            <FeedbackItem item={item} key={index} handleDelete={handleDelete}/>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
+
 }
 
 export default FeedbackList;
