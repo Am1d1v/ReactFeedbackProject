@@ -8,16 +8,21 @@ function FeedbackForm() {
 
     // Review Text
     const [text, setText] = useState('');
+
+    // isDisabled btn toggle
     const [btnDisabled, setBtnDisabled] = useState(true);
+    const [message, setMessage] = useState('');
 
     const handleTextChange = (event) => {
         setText(event.target.value);
 
-        // If Feedback text length less than 10 symbols we cannot send feedback message
-        if(text.length < 10){
+        // If Feedback text length less than 10 characters we cannot send feedback message
+        if(text.trim().length < 10){
             setBtnDisabled(true);
+            setMessage('Text must be longer than 10 characters')
         } else {
-            setBtnDisabled(false)
+            setBtnDisabled(false);
+            setMessage('');
         }
     }
 
@@ -29,6 +34,7 @@ function FeedbackForm() {
                 <input type="text" placeholder='Write a review' onChange={handleTextChange} value={text}/>
                 <Button type="submit" isDisabled={btnDisabled}>Send</Button>
             </div>
+            {message && <div className='message'>{message}</div>}
         </form>
     </Card>
   )
