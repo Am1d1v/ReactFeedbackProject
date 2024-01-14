@@ -22,9 +22,20 @@ export const FeedbackProvider = ({children}) => {
     }
   };
 
+  // Add New Feedback
+  const addNewFeedback = (newFeedback) => {
+    // "Unique" id for feedbaack
+    newFeedback.id = Math.random();
+
+    // Array of feedbacks
+    setFeedback([newFeedback, ...feedback]);
+  };
+
+
     return <FeedbackContext.Provider value={{
         feedback: feedback,
         deleteFeedback,
+        addNewFeedback,
         
         }}>
         {children}
