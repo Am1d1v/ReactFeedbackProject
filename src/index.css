@@ -184,3 +184,9 @@ input:focus {
   text-align: center;
   color: rebeccapurple;
 }
+
+.about-link{
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
