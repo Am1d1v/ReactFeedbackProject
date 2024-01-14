@@ -6,7 +6,7 @@ import FeedbackContext from "../context/FeedbackContext";
 
 function FeedbackList({handleDelete}) {
 
-  const {feedback} = useContext(FeedbackContext)
+  const {feedback} = useContext(FeedbackContext);
 
     if(!feedback || feedback.length === 0){
         return <h3>No Feedback Yet</h3>
