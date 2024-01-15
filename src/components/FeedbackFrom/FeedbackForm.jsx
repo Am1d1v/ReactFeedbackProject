@@ -25,7 +25,12 @@ function FeedbackForm() {
 
 
     useEffect(() => {
-        console.log('Data');
+        // If feedbackEdit.edit === true, we can edit feedback
+        if(feedbackEdit.edit === true){
+            setBtnDisabled(false);
+            setText(feedbackEdit.item.text);
+            setRating(feedbackEdit.item.rating)
+        }
     }, [feedbackEdit]);
 
     const handleTextChange = (event) => {
