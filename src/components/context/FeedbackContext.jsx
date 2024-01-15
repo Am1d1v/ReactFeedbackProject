@@ -35,6 +35,7 @@ export const FeedbackProvider = ({children}) => {
         item,
         edit: true
       })
+      console.log(item);
     };
 
      // Delete Feedback
@@ -60,7 +61,8 @@ export const FeedbackProvider = ({children}) => {
         feedback: feedback,
         deleteFeedback,
         addNewFeedback,
-        
+        editFeedback,
+        feedbackEdit
         }}>
         {children}
     </FeedbackContext.Provider>

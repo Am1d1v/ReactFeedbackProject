@@ -6,7 +6,7 @@ import FeedbackContext from '../context/FeedbackContext'
 
 function FeedbackItem({item, id}) {
 
-  const {deleteFeedback} = useContext(FeedbackContext);
+  const {deleteFeedback, editFeedback} = useContext(FeedbackContext);
 
   return (
     <Card reverse={true}>
@@ -14,7 +14,7 @@ function FeedbackItem({item, id}) {
         <button className="close" onClick={() => deleteFeedback(item.id)} >
           <FaTimes color="pink"/>
         </button>
-        <button className="edit">
+        <button className="edit" onClick={() => editFeedback(item)}>
           <FaEdit color='pink'/>
         </button>
         <div className="text-display">{item.text}</div>

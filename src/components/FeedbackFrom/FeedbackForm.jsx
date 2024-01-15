@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../shared/Card';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Button from '../Button/Button';
 import RatingSelect from '../RatingSelect/RatingSelect';
 import FeedbackContext from '../context/FeedbackContext';
@@ -20,7 +20,13 @@ function FeedbackForm() {
     // Set Rating
     const [rating, setRating] = useState('');
 
-    const {addNewFeedback} = useContext(FeedbackContext);
+    // Feedback Context
+    const {addNewFeedback, feedbackEdit} = useContext(FeedbackContext);
+
+
+    useEffect(() => {
+        console.log('Data');
+    }, [feedbackEdit]);
 
     const handleTextChange = (event) => {
         setText(event.target.value);
