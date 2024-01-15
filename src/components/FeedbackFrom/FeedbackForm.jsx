@@ -21,7 +21,7 @@ function FeedbackForm() {
     const [rating, setRating] = useState('');
 
     // Feedback Context
-    const {addNewFeedback, feedbackEdit} = useContext(FeedbackContext);
+    const {addNewFeedback, feedbackEdit, updateFeedback} = useContext(FeedbackContext);
 
 
     useEffect(() => {
@@ -55,8 +55,13 @@ function FeedbackForm() {
             rating: rating
         }
         
-        // Add new Feedback
-        addNewFeedback(newFeedback);
+        if(feedbackEdit.edit === true){
+            updateFeedback(feedbackEdit.item.id, newFeedback)
+        } else {
+            // Add new Feedback
+            addNewFeedback(newFeedback);
+        }
+
 
         // Clear Input Fields
         setText('');
